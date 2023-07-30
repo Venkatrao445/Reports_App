@@ -22,6 +22,8 @@ public class DataLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		// if we don't write when we run app each time duplicate data will be inserted.if we write this it delete all data and insert 
+		repo.deleteAll();
 		//Cash Plan data
 		CitizenPlan c =	new CitizenPlan();
 		c.setCitizenName("John");
